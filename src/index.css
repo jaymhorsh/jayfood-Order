@@ -1,18 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=Sacramento&display=swap');
 
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  ::-webkit-scrollbar {
+    width: 3px;
+
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+  
+  
+  html {
+    @apply text-base;
+  }
+  h1{
+    font-family: "Sacramento", 'cursive'; 
+  }
+  html {
+    /* font-family: "Montserrat", sans-serif; */
+    /* font-family: "Open Sans", sans-serif; */
+    font-family: "Lato", sans-serif;
+    /* font-family: "Sacramento", 'cursive'; */
+  }
+  @keyframes bump {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(0.9);
+    }
+    30% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .bump {
+    animation: bump 300ms ease-out;
+  }
+  .newInput {
+   @apply bg-none h-[3.7em] outline-zinc-100 rounded-lg sm:w-[100%] w-full outline-none xs:mb-4 md:mb-3 border-2  px-[14px] py-[16.5px];
+  }
+  .btn{
+    @apply  bg-zinc-200 w-full hover:bg-zinc-300 transition-colors ease-in-out duration-500 font-medium text-sm py-2 px-8 border-transparent border rounded-md flex justify-center items-center relative
+  }
+  .buttonp {
+    @apply text-sm  text-firstColor font-bold flex justify-center w-44   px-5 py-2.5 
+    uppercase bg-transparent hover:text-white hover:bg-white border-2 border-firstColor transition-all duration-500
+    relative;
+  }
+  .buttonp::before {
+    @apply content-[''] absolute w-full h-full top-0 
+    bg-firstColor  scale-x-0 transition-transform ease-in-out origin-right duration-500;
+  }
+  .buttonp:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+  input{
+    @apply p-3  outline-zinc-100 h-[50px] w-full rounded-sm mb-2 outline-none text-zinc-500 
+  }
+  ::placeholder{
+    @apply text-sm italic
+  }
+  li {
+    @apply list-none mr-6;
+  }
 }
-
-html {
-  font-family: 'Noto Sans JP', sans-serif;
-}
-
-body {
-  margin: 0;
-  background-color: #fbfefd;
-}
-

@@ -1,0 +1,28 @@
+import React from "react";
+import { Header, Footer } from "../component";
+import Accordions from "../component/Accordion/Accordions";
+// import Cart from "../component/Cart/Cart";
+// import  { CartContextProvider } from "../store/CartContext";
+
+const MenuPage = () => {
+  return (
+    <>
+      {/* <CartContextProvider> */}
+        <Header showCart={"inline"} />
+        <div className="top-[70px] relative h-full">
+          <div className="bg-my-image bg-cover w-full h-full ">
+            <div className="flex inset-0 flex-col w-full h-full  items-center backdrop-blur-md backdrop-brightness-50  text-white">
+              <div className="md:px-6 py-8 px-5 text-justify w-full m-auto">
+                <Accordions />
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer />
+        {/* <Cart/> */}
+      {/* </CartContextProvider> */}
+    </>
+  );
+};
+
+export default MenuPage;

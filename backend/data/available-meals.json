@@ -1,0 +1,408 @@
+[
+  {
+    "id": "m2",
+    "name": "Classic Chicken Salad",
+    "price": 10,
+    "description": "Homemade chicken salad served on a bed of lettuce, green peppers, cucumbers, tomatoes & red onions",
+    "image": "classic.jpg",
+    "imageAlt": "Homemade chicken salad",
+    "category": "salad"
+  },
+  {
+    "id": "m3",
+    "name": "Buffalo Chicken Salad",
+    "price": 0,
+    "description": "Crispy chicken tossed with mild buffalo sauce, lettuce tomato, red onion and banana pepper, tapped with goronza cheese",
+    "image": "buffalo-chopped-chicken-salad.jpg",
+    "imageAlt": "Crispy chicken tossed with mild buffalo sauce",
+    "category": "salad"
+  },
+  {
+    "id": "m4",
+    "name": "Garden Salad",
+    "price": 0,
+    "description": "A bouquet of Lettuce, Tomatoes, and Cucumber served with Sweet Pepper and Onion, drizzled with a Vinaigrette dressing",
+    "image": "garden-salad.jpg",
+    "imageAlt": "A bouquet of Lettuce, Tomatoes",
+    "category": "salad"
+  },
+  {
+    "id": "m5",
+    "name": "Citrus Shrimp Salad & Avocado",
+    "price": 0,
+    "description": "This simple, healthy, and flavorful citrus shrimp and avocado salad with almonds makes the perfect meal-prep meal for lunch or dinner.",
+    "image": "citrus-shrimp-salad.jpeg",
+    "imageAlt": "Citrus Shrimp Salad with Avocado",
+    "category": "salad"
+  },
+  {
+    "id": "m6",
+    "name": "Chicken And Chips",
+    "price": 0,
+    "description": "This simple, healthy, and flavorful Chicken and Chips. This chicken and bring a revitalizing taste that brighten your tasty day ",
+    "image": "chickenandfries.jpeg",
+    "imageAlt": "Chicken And Chips",
+    "category": "pizza"
+  },
+
+  {
+    "id": "m7",
+    "name": "Wraped Chicken Shawarma",
+    "price": 0,
+    "description": "Tender, juicy, and perfectly spiced grilled chicken wrapped in pita bread or tortilla with delicious homemade yogurt-garlic sauce. Try this quick and easy grilled Chicken Shawarma and enjoy the explosion of Middle Eastern flavors with every bite!",
+    "image": "shawarma.jpeg",
+    "imageAlt": "Wraped Chicken Shawarma",
+    "category": "sandwich&wraps"
+  },
+  {
+    "id": "m8",
+    "name": "Grilled Chicken Sandwich",
+    "price": 0,
+    "description": "This grilled chicken sandwich recipe is made with tender juicy sliced beef that is marinated with the most aromatic shawarma spices then seared to perfection in a skillet stove top and served in pita wrap with veggies and tahini sauce",
+    "image": "grilled-chicken-sandwich.jpg",
+    "imageAlt": "Grilled Chicken Sandwich",
+    "category": "sandwich&wraps"
+  },
+  {
+    "id": "m9",
+    "name": "Chicken Shawarma Bowl",
+    "price": 0,
+    "description": "This chicken shawarma bowl bursts with flavors! The chicken shawarma marinade is 2 lbs Chicken breast, Arabic pickled cucumbers, tbsp Garlic powder, Lemons, juice Lettuce, tsp Mint, Dried Red onions,Tomatoes",
+    "image": "chicken-shawarma-bowl.jpeg",
+    "imageAlt": "chicken-shawarma-bowl",
+    "category": "sandwich&wraps"
+  },
+  {
+    "id": "m10",
+    "name": "SandWich",
+    "price": 0,
+    "description": "This sandwich bursts with flavors that gives a mouth watering taste to start your day",
+    "image": "sandwich.jpeg",
+    "imageAlt": "Sliced Sandwich",
+    "category": "sandwich&wraps"
+  },
+
+  {
+    "id": "m11",
+    "name": "Vegetable Burger",
+    "price": 0,
+    "description": "This vegetable burger bursts with flavors!",
+    "image": "veggie-burger.jpg",
+    "imageAlt": "Vegetable Burger",
+    "category": "sandwich&wraps"
+  },
+  {
+    "id": "m12",
+    "name": "Burger",
+    "price": 0,
+    "description": "This burger bursts vegetables with beef flavors! ",
+    "image": "burger.jpg",
+    "imageAlt": "Burger",
+    "category": "sandwich&wraps"
+  },
+  {
+    "id": "m13",
+    "name": "Felafel Wrap",
+    "price": 0,
+    "description": "This sandwich makes for a quick snack or appetizer or even a yummy accompaniment  made with Cabbageو Carrotsو Chilli flakes, redو Green bell peppersو Onionsو Red cabbage",
+    "image": "falafel-wrap.jpg",
+    "imageAlt": "Felafel Wrap",
+    "category": "sandwich&wraps"
+  },
+
+  {
+    "id": "m14",
+    "name": "Barbeeque Pizza ",
+    "price": 0,
+    "description": "A full colourful Pizza which is filled with all the goodnes made with Chicken sausages,Beans, Baked,Mushroom Spring onions Tomatoes",
+    "image": "bbq-pizza.jpeg",
+    "imageAlt": "Barbeeque Pizza",
+    "category": "pizza"
+  },
+  {
+    "id": "15",
+    "name": "Tandoori chicken pizza",
+    "price": 0,
+    "description": "Tandoori chicken pizza topped with onions, bell peppers, jalapenos, cilantro and mozzarella cheese.",
+    "image": "Tandoori-chicken-pizza.jpeg",
+    "imageAlt": "Tandoori chicken pizza",
+    "category": "pizza"
+  },
+
+  {
+    "id": "m16",
+    "name": "Margherita pizza",
+    "price": 0,
+    "description": "Margherita chicken pizza topped with onions, bell peppers, jalapenos, cilantro and mozzarella cheese.",
+    "image": "margherita-pizza.jpg",
+    "imageAlt": "Margherita pizza",
+    "category": "pizza"
+  },
+
+  {
+    "id": "m17",
+    "name": "Grilled Fish with Fries",
+    "price": 0,
+    "description": "Comes with Tartar sauce, pasta, frice or mashed potatoes.",
+    "image": "fries-fish.jpg",
+    "imageAlt": "Grilled Fish with Fries",
+    "category": "seafood "
+  },
+
+  {
+    "id": "m18",
+    "name": "Sea Food Recipe",
+    "price": 0,
+    "description": "This seafood pasta is a mix of shrimp, clams, mussels and scallops, all tossed together with spaghetti in a homemade tomato sauce",
+    "image": "seafood-recipe.jpeg",
+    "imageAlt": "Sea Food Recipe",
+    "category": "seafood"
+  },
+  {
+    "id": "m19",
+    "name": "Breaded Prawn",
+    "price": 0,
+    "description": "Stir fried king prawns with tomatoes sauce  with spicy sauce  with mushroom",
+    "image": "grilled-prawn.jpeg",
+    "imageAlt": "Breaded Prawn",
+    "category": "seafood"
+  },
+  {
+    "id": "m20",
+    "name": "Grilled Croaker Fish,",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk",
+    "image": "grilled-fish.jpeg",
+    "imageAlt": "Grilled Croaker Fish",
+    "category": "seafood"
+  },
+
+  {
+    "id": "m21",
+    "name": "Egusi and Semovita ",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk ",
+    "image": "egusi.jpeg",
+    "imageAlt": "Egusi and Semovita",
+    "category": "local"
+  },
+  {
+    "id": "m22",
+    "name": "Efo riro and Semo",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk ",
+    "image": "efo.jpeg",
+    "imageAlt": "Efo riro and Semo",
+    "category": "local"
+  },
+  {
+    "id": "m23",
+    "name": "Cat fish pepper soup",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk ",
+    "image": "catPsoup.jpeg",
+    "imageAlt": "Cat fish pepper soup",
+    "category": "local"
+  },
+  {
+    "id": "m24",
+    "name": "Goat meat pepper soup",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk ",
+    "image": "meatPsoup.jpeg",
+    "imageAlt": "Goat meat pepper soup",
+    "category": "local"
+  },
+  {
+    "id": "m25",
+    "name": "Okro delight Special",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk ",
+    "image": "okra.jpeg",
+    "imageAlt": "Okro delight Special",
+    "category": "local"
+  },
+  {
+    "id": "m26",
+    "name": "Egg with Plantain",
+    "price": 0,
+    "description": "Egg with Plantain",
+    "image": "egg-plantain.jpeg",
+    "imageAlt": "Egg with Plantain",
+    "category": "local"
+  },
+  {
+    "id": "m27",
+    "name": "Suya Recipe",
+    "price": 0,
+    "description": "This is a delightful tasty suya mixed with  sliced cucumber, red tomatoes and onions",
+    "image": "suya.jpg",
+    "imageAlt": "Suya",
+    "category": "local"
+  },
+
+  {
+    "id": "m28",
+    "name": "Mango Stone Fruit Drink",
+    "price": 0,
+    "description": "This is simply a delicious dairy-free, gluten-free, vegan smoothie , made with ripe mango, plums, apricots and peaches or nectarines",
+    "image": "fruitdrink.png",
+    "imageAlt": "Mango Stone Fruit Drink",
+    "category": "drinks"
+  },
+  {
+    "id": "m29",
+    "name": "Plastic Pepsi (50cl)",
+    "price": 0,
+    "description": "This is a 50cl of pepsi drink to quench your thirst",
+    "image": "pepsi.png",
+    "imageAlt": "",
+    "category": "drinks"
+  },
+  {
+    "id": "30",
+    "name": " Can drinks",
+    "price": 0,
+    "description": "These are varieties of Can drink to quench your thirst",
+    "image": "candrink.jpg",
+    "imageAlt": " Can drinks",
+    "category": "drinks"
+  },
+  {
+    "id": "31",
+    "name": "Table Water ",
+    "price": 0,
+    "description": "This is a 75cl of water drink to quench your thirst",
+    "image": "water.png",
+    "imageAlt": "",
+    "category": "drinks"
+  },
+
+  {
+    "id": "m32",
+    "name": "Fuel Energy Drink",
+    "price": 0,
+    "description": "This is a Can energy drink ",
+    "image": "energy.png",
+    "imageAlt": "Fuel Energy Drink",
+    "category": "drinks"
+  },
+  {
+    "id": "m33",
+    "name": "Tropicana Fruit drink",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk",
+    "image": "fruitdrinks.png",
+    "imageAlt": "Tropicana Fruit drink",
+    "category": "drinks"
+  },
+
+  {
+    "id": "m34",
+    "name": "Roasted Chicken + Vegetables",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk ",
+    "image": "roasted-chicken with-vegetables.jpeg",
+    "imageAlt": "Roasted Chicken With Vegetables",
+    "category": "continental"
+  },
+  {
+    "id": "m35",
+    "name": "Spaghetti Bolognese",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk",
+    "image": "spaghetti.jpg",
+    "imageAlt": "Spaghetti Bolognese",
+    "category": "continental"
+  },
+  {
+    "id": "m36",
+    "name": "T-steak Boneless Beef ",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk",
+    "image": "t-steak_bone.jpg",
+    "imageAlt": "T-steak Boneless Beef",
+    "category": "continental"
+  },
+  {
+    "id": "m37",
+    "name": "Lasagna",
+    "price": 0,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk",
+    "image": "lasagna.jpg",
+    "imageAlt": "Lasagna",
+    "category": "continental"
+  },
+
+  {
+    "id": "m38",
+    "name": "Continental Rice",
+    "price": 0,
+    "description": "Lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk",
+    "image": "rice.jpg",
+    "imageAlt": "Continental Rice",
+    "category": "continental"
+  },
+  {
+    "id": "m39",
+    "name": "Beef Dish",
+    "price": 100,
+    "description": "Stir fried shredded beef with oyster sauce  with fresh tomatoes with green pepper in black bean sauce",
+    "image": "beef-dish.jpg",
+    "imageAlt": "Beef Dish",
+    "category": "appetizer"
+  },
+
+  {
+    "id": "m40",
+    "name": "Breakfast Appetizer",
+    "price": 50,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk",
+    "image": "appetizer.jpg",
+    "imageAlt": "Breakfast Appetizer",
+    "category": "appetizer"
+  },
+  {
+    "id": "m41",
+    "name": "Breakfast light Appetizer",
+    "price": 20,
+    "description": "lorem ipsumhhf jhkrifr aspertjd mongodnr fffh urrr gkrbrefk ",
+    "image": "breakfast.jpeg",
+    "imageAlt": "Breakfast light Appetizer",
+    "category": "appetizer"
+  },
+
+  {
+    "id": "m42",
+    "name": "Chicken Curry",
+    "price": 0,
+    "description": "Tender pieces of chicken simmered in a rich and aromatic curry sauce, served with basmati rice.",
+    "image": "chicken-curry.jpg",
+    "category": "others"
+  },
+
+  {
+    "id": "m43",
+    "name": "Beef Tacos",
+    "price": 0,
+    "description": "Three soft tortillas filled with seasoned beef, fresh salsa, cheese, and sour cream.",
+    "image": "beef-tacos.jpg",
+    "category": "others"
+  },
+  {
+    "id": "m44",
+    "name": "Chocolate Brownie",
+    "price": 0,
+    "description": "A rich and fudgy brownie, topped with a scoop of vanilla ice cream and chocolate sauce.",
+    "image": "chocolate-brownie.jpg",
+    "category": "others"
+  },
+  {
+    "id": "m45",
+    "name": "Lobster Bisque",
+    "price": 0,
+    "description": "A creamy soup made from lobster stock, aromatic vegetables, and a touch of brandy.",
+    "image": "lobster-bisque.jpg",
+    "category": "others"
+  }
+]
