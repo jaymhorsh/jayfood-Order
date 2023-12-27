@@ -22,7 +22,7 @@ const CartItems = ({ item, onIncrease,onDecrease, onRemove }) => {
         
         <div className="flex flex-1 items-end  justify-between text-sm">
           <div>
-            <p className="text-gray-500">Qty <span>{item.quantity}</span></p>
+            <p>Qty: <span className="text-teal-600">{item.quantity}</span></p>
           </div>
           <div>
               <div className="flex gap-2">

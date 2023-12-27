@@ -12,6 +12,10 @@ const Cart = () => {
     // Navigate to the shopping cart page
     navigate("/menu");
   };
+  const handlecheckout = () => {
+    // Navigate to the shopping cart page
+    navigate("/checkout");
+  };
 
   const cartCtx = useContext(CartContext);
   const shipping = +5.0;
@@ -92,12 +96,12 @@ const Cart = () => {
               </div>
 
               <div className="mt-6">
-                <a
-                  href="/menu"
-                  className="flex items-center justify-center rounded-md border border-transparent bg-firstColor px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-altColor"
+                <button
+                onClick={handlecheckout}
+                  className="flex items-center w-full justify-center rounded-md border border-transparent bg-firstColor px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-altColor"
                 >
                   Checkout
-                </a>
+                </button>
               </div>
               <div className="mt-5 flex justify-center text-center  text-sm text-gray-500">
                 <h3>

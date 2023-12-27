@@ -23,7 +23,7 @@ const CartIcon = ({ showCart }) => {
         <FaShoppingCart className="text-3xl  cursor-pointer" />
         <span> Cart</span>
       </div>
-      <span className="absolute text-white  bottom-5 left-4 text-xs py-[1px] px-[4px] font-extrabold flex justify-center  items-center text-center rounded-full bg-firstColor  ">
+      <span className="absolute text-white  bottom-5 left-4 text-xs py-[1px] px-[4px]  flex justify-center  items-center text-center rounded-full bg-firstColor  ">
         {totalCartItems}
       </span>
     </div>

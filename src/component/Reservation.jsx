@@ -26,10 +26,11 @@ const Reservation = () => {
   const fullNameIsEntered = didEdit.fullName && reserve.fullName.length <= 0;
   const phoneNumber = didEdit.phoneNumber && !reserve.phoneNumber.length === 11;
 
+
   // Form input Handler
   const reserveChangeHandler = ({ target: { name, value } }) => {
     setReserve({ ...reserve, [name]: value });
-    setDidEdit({ ...reserve, [name]: false });
+    setDidEdit({ ...didEdit, [name]: false });
   };
 
   const handleDateChange = (date) => {
@@ -48,6 +49,7 @@ const Reservation = () => {
       phoneNumber: "",
     });
   };
+
   return (
     <div>
       <div className="top-[70px] relative h-[450px]">

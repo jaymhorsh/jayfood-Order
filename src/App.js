@@ -5,6 +5,7 @@ import MenuPage from "./pages/MenuPage";
 import ReservationPage from "./pages/ReservationPage";
 import Cart from "./component/Cart/Cart";
 import { CartContextProvider } from "./store/CartContext";
+import Checkout from "./pages/Checkout";
 const App = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/reservation" element={<ReservationPage />} />
             <Route path="/menu" element={<MenuPage />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </CartContextProvider>
       </Router>

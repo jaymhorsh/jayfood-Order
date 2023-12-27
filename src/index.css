@@ -71,9 +71,9 @@
   .buttonp:hover::before {
     @apply scale-x-100 origin-left;
   }
-  input{
+  /* input{
     @apply p-3  outline-zinc-100 h-[50px] w-full rounded-sm mb-2 outline-none text-zinc-500 
-  }
+  } */
   ::placeholder{
     @apply text-sm italic
   }
