@@ -55,7 +55,7 @@ const Reservation = () => {
       <div className="top-[70px] relative h-[450px]">
         <div className="h-[450px] flex w-full">
           <img src={resImg} alt="" className="w-full object-cover" />
-        </div> c
+        </div> 
         <div className="flex inset-2 bg-gray-700 opacity-90"></div>
         <div className="flex inset-0 flex-col absolute w-full h-full justify-center items-center backdrop-brightness-50 text-white">
           <h1 className="md:text-7xl text-5xl xs:text-4xl">
@@ -149,7 +149,7 @@ const Reservation = () => {
                     <option value="10 Person">10 Person</option>
                   </select>
                 </div>
-                <div>
+                <div className="w-full block"> 
                   <DatePicker
                     placeholderText="Select a date"
                     dateFormat="dd/MM/yyyy"
@@ -157,7 +157,10 @@ const Reservation = () => {
                     onChange={handleDateChange}
                     selected={reserve.selectedDate}
                     value={reserve.selectedDate}
-                    className="newInput "
+                    className="newInput"
+                    inline={false}
+                    
+                    
                   />
                 </div>
                 <div>
@@ -184,12 +187,12 @@ const Reservation = () => {
                 onChange={reserveChangeHandler}
                 value={reserve.specialRequest}
                 rows={10}
-                className=" p-3 outline-none w-full rounded-md outline-zinc-100 overflow-hidden  "
+                className=" p-3  w-full rounded-md border border-zinc-400 overflow-hidden  "
                 placeholder="Your Message"
               />
             </div>
             <div className="flex justify-center">
-              <button className="mt-16 text-center cursor-pointer ">
+              <button className="buttonp mt-16 text-center cursor-pointer ">
                 <span className="z-10 ">SEND</span>
               </button>
             </div>

@@ -12,7 +12,7 @@ import {
 const Services = () => {
   return (
     <div className="w-full  mb-10" id="services">
-      <div className="grid xs:pt-6 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:w-[70%] lg:w-[70%] xs:px-10  m-auto md:py-16 mt-10 ">
+      <div className="grid xs:pt-6 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:w-[70%] lg:w-[80%] xs:px-10  m-auto md:py-16 mt-10 ">
         <div className="flex flex-col items-center">
           <div className="my-5">
             <FaUtensils className="text-[70px] text-firstColor   rounded-full p-3.5 hover:bg-button hover:text-white transition-all ease-in-out duration-500 border-transparent border-4 hover:border-4 hover:border-zinc-200" />

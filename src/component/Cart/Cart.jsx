@@ -4,6 +4,7 @@ import CartItems from "./CartItems";
 import Formater from "../../utils/Formater";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -51,7 +52,16 @@ const Cart = () => {
   }
   return (
     <div className="pt-12 xs:px-4 md:px-12 h-full">
-      <h2 className="font-bold text-zinc-900 text-3xl ">Shopping Cart</h2>
+      <h2 className="font-bold text-zinc-900 text-3xl mb-3">Shopping Cart</h2>
+      <button
+        className="flex items-center gap-1"
+        onClick={() => {
+          navigate("/menu");
+        }}
+      >
+        <FaLongArrowAltLeft />
+        <span>Go back to Menu</span>
+      </button>
       {content}
       {cartCtx.items.length > 0 && (
         <div className="md:grid grid-cols-12  mt-4 flex flex-col ">
@@ -97,7 +107,7 @@ const Cart = () => {
 
               <div className="mt-6">
                 <button
-                onClick={handlecheckout}
+                  onClick={handlecheckout}
                   className="flex items-center w-full justify-center rounded-md border border-transparent bg-firstColor px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-altColor"
                 >
                   Checkout

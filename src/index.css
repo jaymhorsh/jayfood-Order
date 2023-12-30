@@ -54,7 +54,7 @@
     animation: bump 300ms ease-out;
   }
   .newInput {
-   @apply bg-none h-[3.7em] outline-zinc-100 rounded-lg sm:w-[100%] w-full outline-none xs:mb-4 md:mb-3 border-2  px-[14px] py-[16.5px];
+   @apply bg-none h-[3.4em] outline-transparent  rounded-lg sm:w-[100%] w-full  xs:mb-4 md:mb-3 border  px-[14px] py-[16.5px];
   }
   .btn{
     @apply  bg-zinc-200 w-full hover:bg-zinc-300 transition-colors ease-in-out duration-500 font-medium text-sm py-2 px-8 border-transparent border rounded-md flex justify-center items-center relative
@@ -71,9 +71,9 @@
   .buttonp:hover::before {
     @apply scale-x-100 origin-left;
   }
-  /* input{
-    @apply p-3  outline-zinc-100 h-[50px] w-full rounded-sm mb-2 outline-none text-zinc-500 
-  } */
+  input,select, textarea{
+    @apply  border-zinc-400 rounded-sm mb-2 outline-transparent text-zinc-500 
+  }
   ::placeholder{
     @apply text-sm italic
   }
