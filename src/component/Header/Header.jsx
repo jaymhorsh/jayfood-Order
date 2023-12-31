@@ -39,7 +39,7 @@ const Header = () => {
           <div className="">
             <ul className="md:flex hidden  ">
               <li className="cursor-pointer">
-                <a href="http://">Explore Our Homepage</a>
+                <a href="https://jay-restuarant.netlify.app"> Our Homepage</a>
               </li>
             </ul>
           </div>
@@ -75,11 +75,9 @@ const Header = () => {
           }
         >
           <li className="mb-4 border-b pb-2 border-zinc-400 hover:pl-2 hover:border-b-teal-600 transition-all ease-in-out duration-300">
-            <a href="http://">Our Homepage</a>
+            <a href="https://jay-restuarant.netlify.app">Our Homepage</a>
           </li>
-          {/* <li className="mb-4 border-b pb-2 border-zinc-400 hover:pl-2 hover:border-b-teal-600 transition-all ease-in-out duration-300">
-            <a href="/reservation">Reservation </a>
-          </li> */}
+         
           <li>
              <button
             className={`buttonp md:flex bg-white border-transparent  text-firstColor  ${
