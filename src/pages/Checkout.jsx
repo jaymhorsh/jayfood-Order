@@ -17,6 +17,7 @@ const Checkout = () => {
 
   const clearCart = () => {
     cartCtx.clearCart();
+
   };
   const calculateCartTotal = () => {
     return cartCtx.items.reduce(
@@ -27,7 +28,7 @@ const Checkout = () => {
 
   const cartTotal = calculateCartTotal();
   let orderTotal = cartTotal + shipping + taxes;
-
+console.log(orderTotal)
   let initialCheckoutState = {
     fullName: "",
     phone: "",
@@ -62,6 +63,8 @@ const Checkout = () => {
   const resetCheckout = () => {
     setCheckout(initialCheckoutState);
     clearCart()
+    console.log(orderTotal)
+    orderTotal = 0
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -115,7 +118,7 @@ const Checkout = () => {
     onSuccess: () => {
       toast.success("Thanks for doing business with us! Come back soon!!");
       resetCheckout();
-      navigate("/menu", { replace: true });
+      navigate("/", { replace: true });
     },
     onClose: () => {
       toast.success("Wait, Dont Leave!");
@@ -143,7 +146,7 @@ const Checkout = () => {
                       }}
                     >
                       <FaLongArrowAltLeft />
-                      <span>Back</span>
+                      <span>Return</span>
                     </button>
                     <p className="text-2xl text-teal-700 font-semibold">
                       Pay: ₦{orderTotal}

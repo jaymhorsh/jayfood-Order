@@ -18,7 +18,7 @@ const CartIcon = ({ showCart }) => {
   };
  
   return (
-    <div className={`relative cursor-pointer ${showCart}`} onClick={handleClick}>
+    <div className={`relative cursor-pointer`} onClick={handleClick}>
       <div className="flex items-center justify-center hover:text-firstColor gap-2 ">
         <FaShoppingCart className="text-3xl  cursor-pointer" />
         <span> Cart</span>

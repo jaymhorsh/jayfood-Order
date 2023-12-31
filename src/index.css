@@ -12,7 +12,6 @@
   }
   ::-webkit-scrollbar {
     width: 3px;
-
   }
   
   ::-webkit-scrollbar-thumb {
@@ -72,7 +71,7 @@
     @apply scale-x-100 origin-left;
   }
   input,select, textarea{
-    @apply  border-zinc-400 rounded-sm mb-2 outline-transparent text-zinc-500 
+    @apply  border-zinc-400 p-3 rounded-sm mb-2 outline-transparent text-zinc-500 
   }
   ::placeholder{
     @apply text-sm italic

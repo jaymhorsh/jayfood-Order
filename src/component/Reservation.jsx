@@ -65,14 +65,14 @@ const Reservation = () => {
           <p className="pt-9 text-lg">
             Take a few minute to fill this simple and easy
           </p>
-          <p className="text-lg">
+          <p className="text-lg text-center">
             JayKitch Restaurant & Lounge online Reservation Form
           </p>
         </div>
       </div>
       <div className="mt-[64px] xs:mt-[120px] bg-zinc-50 ">
         <div className=" md:py-20">
-          <h2 className="text-3xl text-center pb-9">RESERVE A TABLE</h2>
+          <h2 className="text-2xl text-center pb-9">RESERVE A TABLE</h2>
           <form onSubmit={handleSubmit}>
             <div className="m-auto xs:w-[95%] w-[80%]">
               <div className=" grid xs:grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-3">

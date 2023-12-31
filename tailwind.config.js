@@ -14,10 +14,7 @@ module.exports = {
         ...defaultTheme.screens,
         xs: { max: "670px" },
       },
-      fontSize: {
-        12: "12px",
-        14: "14px",
-      },
+     
       colors:{
         'firstColor': "#069c54",
         'altColor':'#0b9b55'

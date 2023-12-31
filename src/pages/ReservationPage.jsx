@@ -5,7 +5,7 @@ import { Header, Footer, Reservation } from "../component";
 const ReservationPage = () => {
   return (
     <>
-      <Header  showCart={'hidden'}/>
+      <Header/>
       <Reservation/>
       <Footer />
     </>

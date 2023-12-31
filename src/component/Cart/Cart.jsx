@@ -11,7 +11,7 @@ const Cart = () => {
 
   const handleClick = () => {
     // Navigate to the shopping cart page
-    navigate("/menu");
+    navigate("/");
   };
   const handlecheckout = () => {
     // Navigate to the shopping cart page
@@ -56,7 +56,7 @@ const Cart = () => {
       <button
         className="flex items-center gap-1"
         onClick={() => {
-          navigate("/menu");
+          navigate("/");
         }}
       >
         <FaLongArrowAltLeft />
