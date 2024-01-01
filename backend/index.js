@@ -23,7 +23,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/images", express.static("/images"));
+app.use("/images", express.static(`${__dirname}/images`));
+
+//app.get("/images", )
+
 app.get("/meals", async (req, res) => {
   // const meals = await fs.readFile(path.join(__dirname, 'data', 'available-meals.json'), 'utf8');
   const meals = await fs.readFile(`${__dirname}/data/available-meals.json`, 'utf8');
@@ -70,13 +73,13 @@ app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });
 
-// app.listen(5000, () => {
-//   console.log("serve at http://localhost:5000");
-// });
+app.listen(5000, () => {
+  console.log("serve at http://localhost:5000");
+});
 
 // After Deployment
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log("Server is running at http://localhost:${PORT}");
-});
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => {
+//   console.log("Server is running at http://localhost:${PORT}");
+// });
 
