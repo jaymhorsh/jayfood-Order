@@ -16,7 +16,7 @@ const MealItems = ({meal}) => {
       <div className="relative group-hover:opacity-90">
         <div className="aspect-h-1 aspect-w-1 w-full h-[16rem] rounded-md overflow-hidden    lg:aspect-none  ">
           <img
-            src={`/images/${meal.image}`}
+            src={`https://jayfood-order.vercel.app/images/${meal.image}`}
             alt={meal.imageAlt}
             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
           />

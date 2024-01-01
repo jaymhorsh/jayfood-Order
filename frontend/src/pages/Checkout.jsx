@@ -73,7 +73,7 @@ console.log(orderTotal)
       if (checkout.payMethod === "payOnDelivery") {
         //locally
         // const response = await fetch("https://localhost:5000/orders", {
-        const response = await fetch("https://jayfood-order.netlify.app/orders", {
+        const response = await fetch("https://jayfood-order.vercel.app/orders", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
