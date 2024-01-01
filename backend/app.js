@@ -8,14 +8,15 @@ import cors from "cors";
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-// app.use(express.static('backend/public'));
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
+//After deployment 
+// app.use(express.static('backend/public'));
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//   next();
+// });
 
 app.use("/images", express.static("images"));
 app.get("/meals", async (req, res) => {
@@ -63,6 +64,13 @@ app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });
 
-app.listen(5000, () => {
-  console.log("serve at https://localhost:5000");
+// app.listen(5000, () => {
+//   console.log("serve at https://localhost:5000");
+// });
+
+// After deployment
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Server is running at http://localhost:${PORT}");
 });
+

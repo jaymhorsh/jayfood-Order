@@ -71,7 +71,9 @@ console.log(orderTotal)
     console.log(checkout);
     try {
       if (checkout.payMethod === "payOnDelivery") {
-        const response = await fetch("https://localhost:5000/orders", {
+        //locally
+        // const response = await fetch("https://localhost:5000/orders", {
+        const response = await fetch("/orders", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

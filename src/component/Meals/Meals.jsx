@@ -13,7 +13,7 @@ export const Appetizer = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
@@ -69,7 +69,7 @@ export const Sandwish = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
@@ -128,7 +128,7 @@ export const LocalDishes = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
@@ -184,7 +184,7 @@ export const Continental = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
@@ -238,7 +238,7 @@ export const Pizza = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
@@ -293,7 +293,7 @@ export const SeaFoods = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
@@ -349,7 +349,7 @@ export const Drinks = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
@@ -405,7 +405,7 @@ export const Salads = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
@@ -462,7 +462,7 @@ export const Others = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("https://localhost:5000/meals");
+        const response = await fetch("/meals",{ headers: { accept: "Accept: application/json" } });
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
