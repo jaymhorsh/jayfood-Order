@@ -55,7 +55,7 @@ app.post("/orders", async (req, res) => {
     id: (Math.random() * 1000).toString(),
     ...orderData,
   };
-  const orders = await fs.readFile("./data/orders.json", "utf8");
+  const orders = await fs.readFile(`${__dirname}/data/orders.json`, 'utf8');
   const allOrders = JSON.parse(orders);
   allOrders.push(newOrder);
   await fs.writeFile("./data/orders.json", JSON.stringify(allOrders));
@@ -70,13 +70,13 @@ app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });
 
-app.listen(5000, () => {
-  console.log("serve at http://localhost:5000");
-});
+// app.listen(5000, () => {
+//   console.log("serve at http://localhost:5000");
+// });
 
 // After Deployment
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-//   console.log("Server is running at http://localhost:${PORT}");
-// });
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Server is running at http://localhost:${PORT}");
+});
 
