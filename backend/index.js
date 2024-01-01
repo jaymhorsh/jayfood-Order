@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/images", express.static("images"));
+app.use("/images", express.static("/images"));
 app.get("/meals", async (req, res) => {
   // const meals = await fs.readFile(path.join(__dirname, 'data', 'available-meals.json'), 'utf8');
   const meals = await fs.readFile(`${__dirname}/data/available-meals.json`, 'utf8');
