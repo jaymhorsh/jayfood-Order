@@ -16,7 +16,7 @@ const MealItems = ({meal}) => {
       <div className="relative group-hover:opacity-90">
         <div className="aspect-h-1 aspect-w-1 w-full h-[16rem] rounded-md overflow-hidden    lg:aspect-none  ">
           <img
-            src={`http://localhost:5000/images/${meal.image}`}
+            src={`https://localhost:5000/images/${meal.image}`}
             alt={meal.imageAlt}
             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
           />

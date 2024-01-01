@@ -7,7 +7,7 @@ const CartItems = ({ item, onIncrease,onDecrease, onRemove }) => {
     <li key={item.id} className="flex py-6 mr-0 md:mr-2">
       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
         <img
-          src={`http://localhost:5000/images/${item.image}`}
+          src={`https://localhost:5000/images/${item.image}`}
           alt={item.imageAlt}
           className="h-full w-full object-cover object-center"
         />
