@@ -64,13 +64,13 @@ app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
 });
 
-// app.listen(5000, () => {
-//   console.log("serve at https://localhost:5000");
-// });
+app.listen(5000, () => {
+  console.log("serve at http://localhost:5000");
+});
 
 // After deployment
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log("Server is running at http://localhost:${PORT}");
-});
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => {
+//   console.log("Server is running at http://localhost:${PORT}");
+// });
 
