@@ -13,7 +13,7 @@ export const Appetizer = () => {
       try {
         setIsLoading(true);
         setIsError(null);
-        const response = await fetch("/meals");
+        const response = await fetch("https://jayfood-order.netlify.app/meals");
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
