@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "id": "m2",
+        "name": "Classic Chicken Salad",
+        "price": 3000,
+        "description": "Homemade chicken salad served on a bed of lettuce, green peppers, cucumbers, tomatoes & red onions",
+        "image": "classic.jpg",
+        "imageAlt": "Homemade chicken salad",
+        "category": "salad"
+      }
+]
