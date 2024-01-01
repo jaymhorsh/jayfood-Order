@@ -5,17 +5,9 @@ import cors from "cors";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-// import Checkout from "../src/pages/Checkout";
-
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
-//After deployment 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
@@ -23,10 +15,10 @@ app.use((req, res, next) => {
   next();
 });
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 app.use("/images", express.static(`${__dirname}/images`));
-
-//app.get("/images", )
-
 app.get("/meals", async (req, res) => {
   // const meals = await fs.readFile(path.join(__dirname, 'data', 'available-meals.json'), 'utf8');
   const meals = await fs.readFile(`${__dirname}/data/available-meals.json`, 'utf8');
@@ -61,7 +53,7 @@ app.post("/orders", async (req, res) => {
   const orders = await fs.readFile(`${__dirname}/data/orders.json`, 'utf8');
   const allOrders = JSON.parse(orders);
   allOrders.push(newOrder);
-  await fs.writeFile("./data/orders.json", JSON.stringify(allOrders));
+  await fs.writeFile(`${__dirname}/data/orders.json`, JSON.stringify(allOrders));
   res.status(201).json({ message: "Order Successfully Created!" });
 });
 
@@ -77,7 +69,7 @@ app.listen(5000, () => {
   console.log("serve at http://localhost:5000");
 });
 
-// After Deployment
+// // After Deployment
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => {
 //   console.log("Server is running at http://localhost:${PORT}");
