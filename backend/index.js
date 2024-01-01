@@ -2,6 +2,8 @@ import fs from "node:fs/promises";
 import bodyParser from "body-parser";
 import express from "express";
 import cors from "cors";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 // import Checkout from "../src/pages/Checkout";
 
@@ -10,7 +12,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //After deployment 
-app.use(express.static('backend/public'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
@@ -20,7 +25,8 @@ app.use((req, res, next) => {
 
 app.use("/images", express.static("images"));
 app.get("/meals", async (req, res) => {
-  const meals = await fs.readFile("./data/available-meals.json", "utf8");
+  // const meals = await fs.readFile(path.join(__dirname, 'data', 'available-meals.json'), 'utf8');
+  const meals = await fs.readFile(`${__dirname}/data/available-meals.json`, 'utf8');
   res.json(JSON.parse(meals));
 });
 
@@ -68,7 +74,7 @@ app.listen(5000, () => {
   console.log("serve at http://localhost:5000");
 });
 
-// After deployment
+// After Deployment
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => {
 //   console.log("Server is running at http://localhost:${PORT}");
