@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-between mx-8 h-full">
           <div>
             <a href="/">
-              <h1> JayKit</h1>
+              <h1> TastyPal</h1>
             </a>
           </div>
 

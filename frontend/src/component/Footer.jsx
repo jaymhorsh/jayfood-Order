@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 xs:grid-cols-1 gap-8 h-full ">
           <div className=" xs:mb-5">
             <h1 className="text-2xl mb-12 text-firstColor font-semibold">
-              JayFoodie Restuarant
+              TastyPal Restuarant
             </h1>
             <div className="flex text-xl text-firstColor my-3">
               <FaFacebook className="mr-3" />
