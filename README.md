@@ -15,7 +15,7 @@ In other to successfully run this program the following should be installed:
 NodeJs can be downloaded from [here](https://nodejs.org/en/download)
 
 Create a paystack account then replace the  
-const publicKey = "pk_test_********"; with your owngenerated public key value to recieve payment at your end. 
+const publicKey = "pk_test_********"; inside the src/pages/checkout.jsx page  with your owngenerated public key value to recieve payment at your end. 
 
 ## Technologies
 
