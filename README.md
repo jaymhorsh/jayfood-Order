@@ -46,7 +46,7 @@ Web: [Food Ordering App](https://jayfood-order-wheat.vercel.app)
 
 [Jaji Moshood](https://github.com/jaymhorsh)
 
-![Contributors](https://img.shields.io/github/contributors/jaymhorsh/jayfood-Order?logoColor=green&style=plastic) ![GitHub repo size](https://img.shields.io/github/reposize/jaymhorsh/jayfood-Order)
+![Contributors](https://img.shields.io/github/contributors/jaymhorsh/jayfood-Order?logoColor=green&style=plastic) ![GitHub repo size](https://img.shields.io/github/repo-size/jaymhorsh/jayfood-Order)
 
 
 
