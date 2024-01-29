@@ -13,7 +13,10 @@ In other to successfully run this program the following should be installed:
 - NodeJs
 
 NodeJs can be downloaded from [here](https://nodejs.org/en/download)
-Create a paystack account to demonstrate payment has ben
+
+Create a paystack account then replace the  
+const publicKey = "pk_test_********"; with your owngenerated public key value to recieve payment at your end. 
+
 ## Technologies
 
 This project was made by using the following:
