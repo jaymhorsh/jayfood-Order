@@ -1,6 +1,6 @@
 # Food Order App
 
-![Screenshot from mobile view](https://res.cloudinary.com/dbkthd6ck/image/upload/v1706092369/Screenshot_127_jvidfl.png)
+![Screenshot from mobile view](https://raw.githubusercontent.com/jaymhorsh/myportfolio/main/src/Assets/images/foodorder.png?token=GHSAT0AAAAAACMJQOZ7HODC7AJRX6D6NML2ZNXU54A)
 
 ## Context
 
@@ -27,6 +27,7 @@ This project was made by using the following:
 - NodeJs
 - Express
 - FetchApi
+
 Hosted using Vercel Hosting Platform.
 
 
