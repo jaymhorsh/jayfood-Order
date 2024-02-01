@@ -4,7 +4,7 @@
 
 ## Context
 
-This is an innovative food-ordering app that streamlines the culinary experience where users effortlessly select from a diverse menu, add items to their cart, fill in delivery details and seamlessly pay via Paystack for a hassle-free shopping journey. The app offers a delightful fusion of convenience and flavour, with added flexibility through Pay on Delivery support.
+This is an innovative food-ordering app that streamlines the culinary experience where users effortlessly select from a diverse menu, add items to their cart, fill in delivery details and seamlessly pay via Paystack for a hassle-free shopping journey. The app offers a delightful fusion of convenience and flavour, with added flexibility through Pay on delivery support.
 
 ## Pre-requisite
 
