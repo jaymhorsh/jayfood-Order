@@ -8,9 +8,7 @@ import { PaystackButton } from "react-paystack";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-
-const Checkout = () => {
-  let initialCheckoutState = {
+let initialCheckoutState = {
   fullName: "",
   phone: "",
   email: "",
@@ -19,6 +17,7 @@ const Checkout = () => {
   payMethod: "",
   amount: +orderTotal,
 };
+const Checkout = () => {
   const navigate = useNavigate();
   const cartCtx = useContext(CartContext);
   const [checkout, setCheckout] = useState(initialCheckoutState);
@@ -80,7 +79,7 @@ const Checkout = () => {
     }
     try {
       if (checkout.payMethod === "payOnDelivery") {
-        //locally
+        //locally url
         // const response = await fetch("https://localhost:5000/orders", {
         const response = await fetch(
           "https://jayfood-order.vercel.app/orders",
@@ -101,7 +100,7 @@ const Checkout = () => {
         if (response.ok) {
           toast.success("Order Placed Successfully!");
           resetCheckout();
-          // navigate("/menu", { replace: true });
+          navigate("/", { replace: true });
         } else {
           toast.error("Failed to place order. Please try again.", {
             position: toast.POSITION.TOP_CENTER,
@@ -117,28 +116,30 @@ const Checkout = () => {
   };
 
   //   Handle Paystack Payment
-  const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
-  const componentProps = {
-    email,
-    amount: parseInt(amount * 100),
-    metadata: {
-      fullName,
-      phone,
-    },
-    publicKey,
-    text: `Proceed To Pay ₦${orderTotal}`,
-    channels: ["card", "bank_transfer", "ussd"],
-    onSuccess: () => {
-      toast.success("Thanks for doing business with us! Come back soon!!");
-      resetCheckout();
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
-    },
-    onClose: () => {
-      toast.success("Wait, Dont Leave!");
-    },
-  };
+const { fullName, phone, email, amount } = checkout;
+const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
+const componentProps = {
+  email,
+  amount: parseInt(amount * 100),
+  metadata: {
+    fullName,
+    phone,
+  },
+  publicKey,
+  text: `Proceed To Pay ₦${orderTotal}`,
+  channels: ["card", "bank_transfer", "ussd"],
+  onSuccess: () => {
+    toast.success("Thanks for doing business with us! Come back soon!!");
+    resetCheckout();
+        setTimeout(() => {
+     navigate("/");
+  }, 1500);
+   
+  },
+  onClose: () => {
+    toast.success("Wait, Dont Leave!");
+  },
+};
 
   return (
     <>
