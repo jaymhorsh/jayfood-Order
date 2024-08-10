@@ -103,7 +103,7 @@ const Checkout = () => {
         if (response.ok) {
           toast.success("Order Placed Successfully!");
           resetCheckout();
-          // navigate("/menu", { replace: true });
+          navigate("/", { replace: true });
         } else {
           toast.error("Failed to place order. Please try again.", {
             position: toast.POSITION.TOP_CENTER,
