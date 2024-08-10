@@ -8,16 +8,28 @@ import { PaystackButton } from "react-paystack";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
+let initialCheckoutState = {
+  fullName: "",
+  phone: "",
+  email: "",
+  address: "",
+  direction: "",
+  payMethod: "",
+  amount: +orderTotal,
+};
 const Checkout = () => {
   const navigate = useNavigate();
   const cartCtx = useContext(CartContext);
-
-  const shipping = 5.0;
-  const taxes = 8.32;
+  const [checkout, setCheckout] = useState(initialCheckoutState);
+  const [didEdit, setDidEdit] = useState({
+    fullName: false,
+    phone: false,
+    address: false,
+  });
+  const [isFlled, setNotFilled] = useState(true);
 
   const clearCart = () => {
     cartCtx.clearCart();
-
   };
   const calculateCartTotal = () => {
     return cartCtx.items.reduce(
@@ -26,47 +38,34 @@ const Checkout = () => {
     );
   };
 
+  const shipping = 5.0;
+  const taxes = 8.32;
   const cartTotal = calculateCartTotal();
   let orderTotal = cartTotal + shipping + taxes;
-  let initialCheckoutState = {
-    fullName: "",
-    phone: "",
-    email: "",
-    address: "",
-    direction: "",
-    payMethod: "",
-    amount: +orderTotal,
-  };
-
-  const [checkout, setCheckout] = useState(initialCheckoutState);
-  const [didEdit, setDidEdit] = useState({
-    fullName: false,
-    phone: false,
-    address: false,
-  });
 
   const handleInputBlur = ({ target: { name } }) => {
     setDidEdit({ ...didEdit, [name]: true });
   };
-
-  // Form Validation
-  const nameIsInvalid = didEdit.fullName && checkout.fullName.length <= 0;
-  const addressIsInvalid = didEdit.address && checkout.address.length <= 0;
-  const phoneNumber = didEdit.phoneNumber && !checkout.phone.length === 11;
-
   //changing state immuttably and preventing rerendering
   const changeHandler = ({ target: { name, value } }) => {
     setCheckout((checkout) => ({ ...checkout, [name]: value }));
     setDidEdit((didEdit) => ({ ...didEdit, [name]: false }));
   };
+  // Form Validation
+  const nameIsInvalid = didEdit.fullName && checkout.fullName.length <= 0;
+  const addressIsInvalid = didEdit.address && checkout.address.length <= 0;
+  const phoneNumber = didEdit.phoneNumber && !checkout.phone.length === 11;
+
+  // Reset function after submission
   const resetCheckout = () => {
     setCheckout(initialCheckoutState);
-    clearCart()
-    orderTotal = 0
+    clearCart();
+    orderTotal = 0;
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-for (const [key, value] of Object.entries(checkout)) {
+    for (const [key, value] of Object.entries(checkout)) {
       const capitalizeWords = (str) => {
         return str
           .replace(/_/g, " ")
@@ -74,6 +73,7 @@ for (const [key, value] of Object.entries(checkout)) {
       };
       if (value === "" || value === null) {
         toast.error(`Please fill the ${capitalizeWords(key)} field`);
+        setNotFilled(false);
         return;
       }
     }
@@ -81,18 +81,21 @@ for (const [key, value] of Object.entries(checkout)) {
       if (checkout.payMethod === "payOnDelivery") {
         //locally
         // const response = await fetch("https://localhost:5000/orders", {
-        const response = await fetch("https://jayfood-order.vercel.app/orders", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            order: {
-              items: cartCtx.items,
-              customer: checkout,
+        const response = await fetch(
+          "https://jayfood-order.vercel.app/orders",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
-          }),
-        });
+            body: JSON.stringify({
+              order: {
+                items: cartCtx.items,
+                customer: checkout,
+              },
+            }),
+          }
+        );
 
         if (response.ok) {
           toast.success("Order Placed Successfully!");
@@ -110,7 +113,10 @@ for (const [key, value] of Object.entries(checkout)) {
         position: toast.POSITION.TOP_CENTER,
       });
     }
- const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
+  };
+
+  //   Handle Paystack Payment
+  const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
   const componentProps = {
     email,
     amount: parseInt(amount * 100),
@@ -124,18 +130,15 @@ for (const [key, value] of Object.entries(checkout)) {
     onSuccess: () => {
       toast.success("Thanks for doing business with us! Come back soon!!");
       resetCheckout();
-          setTimeout(() => {
-       navigate("/");
-    }, 1500);
-     
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
     },
     onClose: () => {
       toast.success("Wait, Dont Leave!");
     },
   };
 
-  };
- 
   return (
     <>
       <ToastContainer />
@@ -266,7 +269,7 @@ for (const [key, value] of Object.entries(checkout)) {
                           <span className="z-10  text-white">Order Now</span>
                         </button>
                       )}
-                      {checkout.payMethod === "PayNow" && (
+                      {checkout.payMethod === "PayNow" && isFlled && (
                         <PaystackButton
                           className="btn  cursor-pointer  rounded-sm text-base text-white hover:bg-button-alt transition-all duration-300 ease-in-out bg-button"
                           {...componentProps}
