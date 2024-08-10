@@ -8,17 +8,18 @@ import { PaystackButton } from "react-paystack";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-let initialCheckoutState = {
-  fullName: "",
-  phone: "",
-  email: "",
-  address: "",
-  direction: "",
-  payMethod: "",
-  amount: +orderTotal,
-};
 const Checkout = () => {
+  let initialCheckoutState = {
+    fullName: "",
+    phone: "",
+    email: "",
+    address: "",
+    direction: "",
+    payMethod: "",
+    amount: +orderTotal,
+  };
   const navigate = useNavigate();
+  const [isFlled, setNotFilled] = useState(true);
   const cartCtx = useContext(CartContext);
   const [checkout, setCheckout] = useState(initialCheckoutState);
   const [didEdit, setDidEdit] = useState({
@@ -26,7 +27,10 @@ const Checkout = () => {
     phone: false,
     address: false,
   });
-  const [isFlled, setNotFilled] = useState(true);
+  // Form Validation
+  const nameIsInvalid = didEdit.fullName && checkout.fullName.length <= 0;
+  const addressIsInvalid = didEdit.address && checkout.address.length <= 0;
+  const phoneNumber = didEdit.phoneNumber && !checkout.phone.length === 11;
 
   const clearCart = () => {
     cartCtx.clearCart();
@@ -51,10 +55,6 @@ const Checkout = () => {
     setCheckout((checkout) => ({ ...checkout, [name]: value }));
     setDidEdit((didEdit) => ({ ...didEdit, [name]: false }));
   };
-  // Form Validation
-  const nameIsInvalid = didEdit.fullName && checkout.fullName.length <= 0;
-  const addressIsInvalid = didEdit.address && checkout.address.length <= 0;
-  const phoneNumber = didEdit.phoneNumber && !checkout.phone.length === 11;
 
   // Reset function after submission
   const resetCheckout = () => {
@@ -62,7 +62,6 @@ const Checkout = () => {
     clearCart();
     orderTotal = 0;
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     for (const [key, value] of Object.entries(checkout)) {
@@ -79,7 +78,7 @@ const Checkout = () => {
     }
     try {
       if (checkout.payMethod === "payOnDelivery") {
-        //locally url
+        //locally
         // const response = await fetch("https://localhost:5000/orders", {
         const response = await fetch(
           "https://jayfood-order.vercel.app/orders",
@@ -115,31 +114,30 @@ const Checkout = () => {
     }
   };
 
-  //   Handle Paystack Payment
-const { fullName, phone, email, amount } = checkout;
-const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
-const componentProps = {
-  email,
-  amount: parseInt(amount * 100),
-  metadata: {
-    fullName,
-    phone,
-  },
-  publicKey,
-  text: `Proceed To Pay ₦${orderTotal}`,
-  channels: ["card", "bank_transfer", "ussd"],
-  onSuccess: () => {
-    toast.success("Thanks for doing business with us! Come back soon!!");
-    resetCheckout();
-        setTimeout(() => {
-     navigate("/");
-  }, 1500);
-   
-  },
-  onClose: () => {
-    toast.success("Wait, Dont Leave!");
-  },
-};
+  const { fullName, phone, email, amount } = checkout;
+  console.log(amount);
+  const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
+  const componentProps = {
+    email,
+    amount: parseInt(amount * 100),
+    metadata: {
+      fullName,
+      phone,
+    },
+    publicKey,
+    text: `Proceed To Pay ₦${orderTotal}`,
+    channels: ["card", "bank_transfer", "ussd"],
+    onSuccess: () => {
+      toast.success("Thanks for doing business with us! Come back soon!!");
+      resetCheckout();
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    },
+    onClose: () => {
+      toast.success("Wait, Dont Leave!");
+    },
+  };
 
   return (
     <>
