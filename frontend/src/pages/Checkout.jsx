@@ -9,6 +9,7 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
+  const cartCtx = useContext(CartContext);
   let initialCheckoutState = {
     fullName: "",
     phone: "",
@@ -18,9 +19,11 @@ const Checkout = () => {
     payMethod: "",
     amount: +orderTotal,
   };
+  const shipping = 5.0;
+  const taxes = 8.32;
   const navigate = useNavigate();
   const [isFlled, setNotFilled] = useState(true);
-  const cartCtx = useContext(CartContext);
+
   const [checkout, setCheckout] = useState(initialCheckoutState);
   const [didEdit, setDidEdit] = useState({
     fullName: false,
@@ -41,9 +44,6 @@ const Checkout = () => {
       0
     );
   };
-
-  const shipping = 5.0;
-  const taxes = 8.32;
   const cartTotal = calculateCartTotal();
   let orderTotal = cartTotal + shipping + taxes;
 
