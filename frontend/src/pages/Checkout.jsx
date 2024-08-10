@@ -13,7 +13,6 @@ const Checkout = () => {
   const taxes = 8.32;
   const cartCtx = useContext(CartContext);
   const navigate = useNavigate();
-  const [isFlled, setNotFilled] = useState(true);
   const [didEdit, setDidEdit] = useState({
     fullName: false,
     phone: false,
@@ -70,7 +69,6 @@ const Checkout = () => {
       };
       if (value === "" || value === null) {
         toast.error(`Please fill the ${capitalizeWords(key)} field`);
-        setNotFilled(false);
         return;
       }
     }
@@ -266,7 +264,7 @@ const Checkout = () => {
                           <span className="z-10  text-white">Order Now</span>
                         </button>
                       )}
-                      {checkout.payMethod === "PayNow" && isFlled && (
+                      {checkout.payMethod === "PayNow" && (
                         <PaystackButton
                           className="btn  cursor-pointer  rounded-sm text-base text-white hover:bg-button-alt transition-all duration-300 ease-in-out bg-button"
                           {...componentProps}
