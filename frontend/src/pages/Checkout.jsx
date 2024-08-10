@@ -28,7 +28,6 @@ const Checkout = () => {
 
   const cartTotal = calculateCartTotal();
   let orderTotal = cartTotal + shipping + taxes;
-console.log(orderTotal)
   let initialCheckoutState = {
     fullName: "",
     phone: "",
@@ -63,12 +62,21 @@ console.log(orderTotal)
   const resetCheckout = () => {
     setCheckout(initialCheckoutState);
     clearCart()
-    console.log(orderTotal)
     orderTotal = 0
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(checkout);
+for (const [key, value] of Object.entries(checkout)) {
+      const capitalizeWords = (str) => {
+        return str
+          .replace(/_/g, " ")
+          .replace(/\b\w/g, (char) => char.toUpperCase());
+      };
+      if (value === "" || value === null) {
+        toast.error(`Please fill the ${capitalizeWords(key)} field`);
+        return;
+      }
+    }
     try {
       if (checkout.payMethod === "payOnDelivery") {
         //locally
@@ -120,7 +128,10 @@ console.log(orderTotal)
     onSuccess: () => {
       toast.success("Thanks for doing business with us! Come back soon!!");
       resetCheckout();
-      navigate("/", { replace: true });
+          setTimeout(() => {
+       navigate("/");
+    }, 1500);
+     
     },
     onClose: () => {
       toast.success("Wait, Dont Leave!");
@@ -168,7 +179,6 @@ console.log(orderTotal)
                         type="text"
                         name="fullName"
                         value={checkout.fullName}
-                        required
                         onChange={changeHandler}
                         onBlur={handleInputBlur}
                       />
@@ -183,7 +193,6 @@ console.log(orderTotal)
                         type="number"
                         name="phone"
                         value={checkout.phone}
-                        required
                         onChange={changeHandler}
                         onBlur={handleInputBlur}
                       />
@@ -196,7 +205,6 @@ console.log(orderTotal)
                         type="text"
                         name="email"
                         value={checkout.email}
-                        required
                         onChange={changeHandler}
                       />
                     </div>
@@ -210,7 +218,6 @@ console.log(orderTotal)
                         type="text"
                         name="address"
                         value={checkout.address}
-                        required
                         onChange={changeHandler}
                         onBlur={handleInputBlur}
                       />
@@ -223,7 +230,6 @@ console.log(orderTotal)
                         type="text"
                         name="direction"
                         value={checkout.direction}
-                        required
                         onChange={changeHandler}
                       />
                     </div>
@@ -237,7 +243,6 @@ console.log(orderTotal)
                             value="PayNow"
                             checked={checkout.payMethod === "PayNow"}
                             onChange={changeHandler}
-                            required
                           />
                           <span className="pl-2"> Pay Now</span>
                         </label>
@@ -249,7 +254,6 @@ console.log(orderTotal)
                             value="payOnDelivery"
                             checked={checkout.payMethod === "payOnDelivery"}
                             onChange={changeHandler}
-                            required
                           />
                           <span className="pl-2"> Pay on Delivery</span>
                         </label>
