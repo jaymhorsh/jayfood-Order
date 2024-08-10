@@ -8,7 +8,9 @@ import { PaystackButton } from "react-paystack";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-let initialCheckoutState = {
+
+const Checkout = () => {
+  let initialCheckoutState = {
   fullName: "",
   phone: "",
   email: "",
@@ -17,7 +19,6 @@ let initialCheckoutState = {
   payMethod: "",
   amount: +orderTotal,
 };
-const Checkout = () => {
   const navigate = useNavigate();
   const cartCtx = useContext(CartContext);
   const [checkout, setCheckout] = useState(initialCheckoutState);
