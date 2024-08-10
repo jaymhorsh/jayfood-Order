@@ -11,11 +11,13 @@ import { useNavigate } from "react-router-dom";
 const Checkout = () => {
   const navigate = useNavigate();
   const cartCtx = useContext(CartContext);
+
   const shipping = 5.0;
   const taxes = 8.32;
 
   const clearCart = () => {
     cartCtx.clearCart();
+
   };
   const calculateCartTotal = () => {
     return cartCtx.items.reduce(
@@ -23,6 +25,7 @@ const Checkout = () => {
       0
     );
   };
+
   const cartTotal = calculateCartTotal();
   let orderTotal = cartTotal + shipping + taxes;
   let initialCheckoutState = {
@@ -34,12 +37,14 @@ const Checkout = () => {
     payMethod: "",
     amount: +orderTotal,
   };
+
   const [checkout, setCheckout] = useState(initialCheckoutState);
   const [didEdit, setDidEdit] = useState({
     fullName: false,
     phone: false,
     address: false,
   });
+
   const handleInputBlur = ({ target: { name } }) => {
     setDidEdit({ ...didEdit, [name]: true });
   };
@@ -56,54 +61,43 @@ const Checkout = () => {
   };
   const resetCheckout = () => {
     setCheckout(initialCheckoutState);
-    clearCart();
-    orderTotal = 0;
+    clearCart()
+    orderTotal = 0
   };
-  // Validate form function
-  const validateForm = () => {
-    for (const [key, value] of Object.entries(checkout)) {
-      if (value === "" || value === null) {
-        const capitalizeWords = (str) => {
-          return str
-            .replace(/_/g, " ")
-            .replace(/\b\w/g, (char) => char.toUpperCase());
-        };
-        toast.error(`Please fill the ${capitalizeWords(key)} field`);
-        return false;
-      }
-    }
-    return true;
-  };
-  // Form Submission handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) {
-      return;
+for (const [key, value] of Object.entries(checkout)) {
+      const capitalizeWords = (str) => {
+        return str
+          .replace(/_/g, " ")
+          .replace(/\b\w/g, (char) => char.toUpperCase());
+      };
+      if (value === "" || value === null) {
+        toast.error(`Please fill the ${capitalizeWords(key)} field`);
+        return;
+      }
     }
     try {
       if (checkout.payMethod === "payOnDelivery") {
         //locally
         // const response = await fetch("https://localhost:5000/orders", {
-        const response = await fetch(
-          "https://jayfood-order.vercel.app/orders",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
+        const response = await fetch("https://jayfood-order.vercel.app/orders", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            order: {
+              items: cartCtx.items,
+              customer: checkout,
             },
-            body: JSON.stringify({
-              order: {
-                items: cartCtx.items,
-                customer: checkout,
-              },
-            }),
-          }
-        );
+          }),
+        });
 
         if (response.ok) {
           toast.success("Order Placed Successfully!");
           resetCheckout();
-          // navigate("/menu", { replace: true });
+          navigate("/", { replace: true });
         } else {
           toast.error("Failed to place order. Please try again.", {
             position: toast.POSITION.TOP_CENTER,
@@ -111,6 +105,7 @@ const Checkout = () => {
         }
       }
     } catch (error) {
+      console.error("Error:", error);
       toast.error("An unexpected error occurred. Please try again later.", {
         position: toast.POSITION.TOP_CENTER,
       });
@@ -118,7 +113,6 @@ const Checkout = () => {
   };
 
   const { fullName, phone, email, amount } = checkout;
-  console.log(amount);
   const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
   const componentProps = {
     email,
@@ -133,15 +127,13 @@ const Checkout = () => {
     onSuccess: () => {
       toast.success("Thanks for doing business with us! Come back soon!!");
       resetCheckout();
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
+          setTimeout(() => {
+       navigate("/");
+    }, 1500);
+     
     },
-    onClick: () => {
-      // Validate form before proceeding with Paystack payment
-      if (!validateForm()) {
-        return;
-      }
+    onClose: () => {
+      toast.success("Wait, Dont Leave!");
     },
   };
 
