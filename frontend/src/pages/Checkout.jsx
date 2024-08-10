@@ -9,22 +9,11 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
-  const cartCtx = useContext(CartContext);
-  let initialCheckoutState = {
-    fullName: "",
-    phone: "",
-    email: "",
-    address: "",
-    direction: "",
-    payMethod: "",
-    amount: +orderTotal,
-  };
   const shipping = 5.0;
   const taxes = 8.32;
+  const cartCtx = useContext(CartContext);
   const navigate = useNavigate();
   const [isFlled, setNotFilled] = useState(true);
-
-  const [checkout, setCheckout] = useState(initialCheckoutState);
   const [didEdit, setDidEdit] = useState({
     fullName: false,
     phone: false,
@@ -35,9 +24,6 @@ const Checkout = () => {
   const addressIsInvalid = didEdit.address && checkout.address.length <= 0;
   const phoneNumber = didEdit.phoneNumber && !checkout.phone.length === 11;
 
-  const clearCart = () => {
-    cartCtx.clearCart();
-  };
   const calculateCartTotal = () => {
     return cartCtx.items.reduce(
       (totalPrice, item) => totalPrice + item.quantity * item.price,
@@ -46,7 +32,20 @@ const Checkout = () => {
   };
   const cartTotal = calculateCartTotal();
   let orderTotal = cartTotal + shipping + taxes;
+  let initialCheckoutState = {
+    fullName: "",
+    phone: "",
+    email: "",
+    address: "",
+    direction: "",
+    payMethod: "",
+    amount: +orderTotal,
+  };
+  const [checkout, setCheckout] = useState(initialCheckoutState);
 
+  const clearCart = () => {
+    cartCtx.clearCart();
+  };
   const handleInputBlur = ({ target: { name } }) => {
     setDidEdit({ ...didEdit, [name]: true });
   };
@@ -55,7 +54,6 @@ const Checkout = () => {
     setCheckout((checkout) => ({ ...checkout, [name]: value }));
     setDidEdit((didEdit) => ({ ...didEdit, [name]: false }));
   };
-
   // Reset function after submission
   const resetCheckout = () => {
     setCheckout(initialCheckoutState);
@@ -115,7 +113,6 @@ const Checkout = () => {
   };
 
   const { fullName, phone, email, amount } = checkout;
-  console.log(amount);
   const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
   const componentProps = {
     email,
