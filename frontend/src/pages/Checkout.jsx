@@ -110,11 +110,7 @@ for (const [key, value] of Object.entries(checkout)) {
         position: toast.POSITION.TOP_CENTER,
       });
     }
-  };
-
-  const { fullName, phone, email, amount } = checkout;
-  console.log(amount);
-  const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
+ const publicKey = "pk_test_c97c1e226ce51973b9759013a404b36af87eef99";
   const componentProps = {
     email,
     amount: parseInt(amount * 100),
@@ -138,6 +134,8 @@ for (const [key, value] of Object.entries(checkout)) {
     },
   };
 
+  };
+ 
   return (
     <>
       <ToastContainer />
